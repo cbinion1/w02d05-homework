@@ -254,23 +254,6 @@ const leaveTheShire = () => {
 let leaveShire = document.querySelector('#the-shire section');
  
     document.getElementById('rivendell').appendChild(leaveShire);
-}
-
-function beautifulStranger() {
- 
-    console.log('Beautiful stranger');
-
-    for (let i = 0; i < buddies.length; i++) {
- 
-        if(buddies[i] === 'Strider') {
- 
-            buddies[i] = buddies[i].replace('Strider', "Aragorn");
- 
-            let thisBuddy = document.getElementById('Strider');
- 
-            thisBuddy.childNodes[0].innerHTML = buddies[i];
-        }
-    }
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
@@ -286,41 +269,16 @@ const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
 
-let leaveMordor = document.querySelector('#mordor aside');
+for (let i = 0; i < buddies.length; i++) {
   
-    leaveMordor.id = "moving";
+        if(buddies[i] === 'Strider') {
   
-    document.getElementById('rivendell').appendChild(leaveMordor);
-
-    let fellowText = document.createElement('h1');
+            buddies[i] = buddies[i].replace('Strider', "Aragorn");
   
-    fellowText.innerHTML = "The Fellowship";
-
-    let theFellowShip = document.createElement('div');
+            let thisBuddy = document.getElementById('Strider');
   
-    theFellowShip.setAttribute('id', 'the-fellowship');
-  
-    theFellowShip.appendChild(fellowText);
-
-    document.getElementById('middle-earth').appendChild(theFellowShip);
-
-    let hobbitGroup = document.querySelector('#rivendell section').getElementsByTagName('article');
-  
-    let buddiesGroup = document.querySelector('#rivendell aside').getElementsByTagName('article');
-
-    for (let i = hobbitGroup.length - 1; i >= 0; i--) {
-  
-        alert(`${hobbitGroup[i].childNodes[0].innerHTML} joined your Party!`);
-  
-        document.getElementById('the-fellowship').appendChild(hobbitGroup[i]);
-    }
-
-    for (let i = buddiesGroup.length - 1; i >= 0; i--) {
-  
-        alert(`${buddiesGroup[i].childNodes[0].innerHTML} joined your Party!`);
-  
-        document.getElementById('the-fellowship').appendChild(buddiesGroup[i]);
-    }
+            thisBuddy.childNodes[0].innerHTML = buddies[i];
+        }
 
 
   // hint: You can get a list of elements by tag name, such as 'aside'
@@ -337,22 +295,40 @@ const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
 
-let theTeam = document.querySelector('#the-fellowship').getElementsByTagName('article');
+let leaveMordor = document.querySelector('#mordor aside');
+ 
+    leaveMordor.id = "moving";
+ 
+    document.getElementById('rivendell').appendChild(leaveMordor);
 
-    for (let i = 0; i < theTeam.length; i++) {
-     
-        if (theTeam[i].id === 'Gandalf the Grey') {
-     
-            theTeam[i].id = "Gandalf the White";
-     
-            theTeam[i].childNodes[0].innerHTML = "Gandalf the White";
-     
-            theTeam[i].className = "the-white";
+    let fellowText = document.createElement('h1');
+ 
+    fellowText.innerHTML = "The Fellowship";
 
-            theTeam[i].style.background = 'white';
-     
-            theTeam[i].style.border = "thin solid grey";
-        }
+    let theFellowShip = document.createElement('div');
+ 
+    theFellowShip.setAttribute('id', 'the-fellowship');
+ 
+    theFellowShip.appendChild(fellowText);
+
+    document.getElementById('middle-earth').appendChild(theFellowShip);
+
+    let hobbitGroup = document.querySelector('#rivendell section').getElementsByTagName('article');
+ 
+    let buddiesGroup = document.querySelector('#rivendell aside').getElementsByTagName('article');
+
+    for (let i = hobbitGroup.length - 1; i >= 0; i--) {
+ 
+        alert(`${hobbitGroup[i].childNodes[0].innerHTML} joined your Party!`);
+ 
+        document.getElementById('the-fellowship').appendChild(hobbitGroup[i]);
+    }
+
+    for (let i = buddiesGroup.length - 1; i >= 0; i--) {
+ 
+        alert(`${buddiesGroup[i].childNodes[0].innerHTML} joined your Party!`);
+ 
+        document.getElementById('the-fellowship').appendChild(buddiesGroup[i]);
     }
 
   // 2. add an h1 with the text 'The Fellowship' to this new div
@@ -372,6 +348,24 @@ let theTeam = document.querySelector('#the-fellowship').getElementsByTagName('ar
 const theBalrog = () => {
 
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
+
+let theTeam = document.querySelector('#the-fellowship').getElementsByTagName('article');
+
+    for (let i = 0; i < theTeam.length; i++) {
+ 
+        if (theTeam[i].id === 'Gandalf the Grey') {
+ 
+            theTeam[i].id = "Gandalf the White";
+ 
+            theTeam[i].childNodes[0].innerHTML = "Gandalf the White";
+ 
+            theTeam[i].className = "the-white";
+
+            theTeam[i].style.background = 'white';
+ 
+            theTeam[i].style.border = "thin solid grey";
+        }
+    }
 
   // 2. add a class "the-white" to this element
 
