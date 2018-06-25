@@ -445,6 +445,23 @@ const weWantsIt = () => {
 
   // 1. Create a div with an id of 'gollum' and add it to Mordor
 
+let gollum = document.createElement('div');
+ 
+    gollum.innerHTML = "Gollum";
+ 
+    gollum.setAttribute('id', 'gollum');
+ 
+    document.getElementById('mordor').appendChild(gollum);
+
+    let theRing = document.getElementById('the-ring');
+ 
+    document.getElementById('gollum').appendChild(theRing);
+ 
+    theRing.style.color = (theRing.parentNode === gollum) ? 'red' : 'black';
+ 
+    document.getElementById('mount-doom').appendChild(gollum);
+
+
   // 2. Move the ring from Frodo and give it to Gollum
 
   // 3. Move Gollum into Mount Doom
