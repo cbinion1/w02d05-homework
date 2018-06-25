@@ -251,6 +251,27 @@ const leaveTheShire = () => {
 
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
 
+let leaveShire = document.querySelector('#the-shire section');
+ 
+    document.getElementById('rivendell').appendChild(leaveShire);
+}
+
+function beautifulStranger() {
+ 
+    console.log('Beautiful stranger');
+
+    for (let i = 0; i < buddies.length; i++) {
+ 
+        if(buddies[i] === 'Strider') {
+ 
+            buddies[i] = buddies[i].replace('Strider', "Aragorn");
+ 
+            let thisBuddy = document.getElementById('Strider');
+ 
+            thisBuddy.childNodes[0].innerHTML = buddies[i];
+        }
+    }
+
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
 };
