@@ -286,6 +286,43 @@ const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
 
+let leaveMordor = document.querySelector('#mordor aside');
+  
+    leaveMordor.id = "moving";
+  
+    document.getElementById('rivendell').appendChild(leaveMordor);
+
+    let fellowText = document.createElement('h1');
+  
+    fellowText.innerHTML = "The Fellowship";
+
+    let theFellowShip = document.createElement('div');
+  
+    theFellowShip.setAttribute('id', 'the-fellowship');
+  
+    theFellowShip.appendChild(fellowText);
+
+    document.getElementById('middle-earth').appendChild(theFellowShip);
+
+    let hobbitGroup = document.querySelector('#rivendell section').getElementsByTagName('article');
+  
+    let buddiesGroup = document.querySelector('#rivendell aside').getElementsByTagName('article');
+
+    for (let i = hobbitGroup.length - 1; i >= 0; i--) {
+  
+        alert(`${hobbitGroup[i].childNodes[0].innerHTML} joined your Party!`);
+  
+        document.getElementById('the-fellowship').appendChild(hobbitGroup[i]);
+    }
+
+    for (let i = buddiesGroup.length - 1; i >= 0; i--) {
+  
+        alert(`${buddiesGroup[i].childNodes[0].innerHTML} joined your Party!`);
+  
+        document.getElementById('the-fellowship').appendChild(buddiesGroup[i]);
+    }
+
+
   // hint: You can get a list of elements by tag name, such as 'aside'
 
 };
