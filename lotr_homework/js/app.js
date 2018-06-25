@@ -1,6 +1,9 @@
 console.log("LOTR homework js file is connected");
 console.log("HINT: Click on the 'Elements' tab to see the elements that you are creating");
 console.log("---------------")
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
 // ==============================
 //       Dramatis Personae
 // ==============================
@@ -101,7 +104,7 @@ let allTheHobbits = document.createElement('section');
 
     let shireRef = document.getElementById('the-shire');
     
-    shireRef.appendChild(allTheHobbits);
+     shireRef.appendChild(allTheHobbits);
 
     hobbits.sort();
 
@@ -120,10 +123,7 @@ let allTheHobbits = document.createElement('section');
         thisHobbit.innerHTML = hobbits[i];
     
         hobbit.appendChild(thisHobbit);
-}
-
-
-
+  }
 
   // 2. give each hobbit a class of "hobbit"
 
@@ -142,6 +142,12 @@ let allTheHobbits = document.createElement('section');
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
+  let emptyDiv = document.createElement('div');
+    emptyDiv.setAttribute('id', 'the-ring');
+    emptyDiv.innerHTML = "The ring";
+
+    let frodoRing = document.getElementsByClassName('hobbit')[0];
+    frodoRing.appendChild(emptyDiv);
 
   // 2. add the ring as a child of Frodo
 
