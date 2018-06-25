@@ -337,6 +337,24 @@ const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
 
+let theTeam = document.querySelector('#the-fellowship').getElementsByTagName('article');
+
+    for (let i = 0; i < theTeam.length; i++) {
+     
+        if (theTeam[i].id === 'Gandalf the Grey') {
+     
+            theTeam[i].id = "Gandalf the White";
+     
+            theTeam[i].childNodes[0].innerHTML = "Gandalf the White";
+     
+            theTeam[i].className = "the-white";
+
+            theTeam[i].style.background = 'white';
+     
+            theTeam[i].style.border = "thin solid grey";
+        }
+    }
+
   // 2. add an h1 with the text 'The Fellowship' to this new div
 
   // 3. append the fellowship to middle-earth
