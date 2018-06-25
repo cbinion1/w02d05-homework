@@ -210,6 +210,31 @@ const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
 
+let allTheBuddies = document.createElement('aside');
+    
+    allTheBuddies.setAttribute('id', 'mordor');
+
+    let mordorRef = document.getElementById('mordor');
+    
+    mordorRef.appendChild(allTheBuddies);
+
+    for (let i = 0; i < buddies.length; i++) {
+    
+        let goodGuy = document.createElement('article');
+    
+        goodGuy.setAttribute('class', 'buddy');
+    
+        goodGuy.setAttribute('id', buddies[i]);
+    
+        allTheBuddies.appendChild(goodGuy);
+
+        let thisBuddy = document.createElement('h1');
+    
+        thisBuddy.innerHTML = buddies[i];
+    
+        goodGuy.appendChild(thisBuddy);
+    }
+
   // 2. display an unordered list of buddies in the aside
 
   // 3. give each of the buddies a class of "buddy"
