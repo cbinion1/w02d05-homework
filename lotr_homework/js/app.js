@@ -478,6 +478,26 @@ const thereAndBackAgain = () => {
 
   // 1. remove Gollum and the Ring from the DOM
 
+let mountDoom = document.querySelector('#mordor div');
+ 
+    let lostRing = document.getElementById('gollum');
+ 
+    mountDoom.removeChild(lostRing);
+
+    let allEnemies = document.querySelector('#mordor section');
+
+    while(allEnemies.firstChild) {
+ 
+        allEnemies.removeChild(allEnemies.firstChild);
+    }
+
+    let allHobbits = document.querySelectorAll('.hobbit');
+
+    for (let i = 0; i < allHobbits.length; i++) {
+ 
+        document.getElementById('the-shire').appendChild(allHobbits[i]);
+    }
+
   // 2. remove all the baddies from the DOM
 
   // 3. Move all the hobbits back to the shire
