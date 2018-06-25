@@ -413,6 +413,24 @@ const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
 
+let frodo = document.getElementById('Frodo Baggins');
+ 
+    document.getElementById('mordor').appendChild(frodo);
+
+    let sam = document.getElementById('Samwise "Sam" Gamgee');
+ 
+    document.getElementById('mordor').appendChild(sam);
+
+    let newDiv = document.createElement('div');
+ 
+    newDiv.setAttribute('id', 'mount-doom');
+ 
+    newDiv.innerHTML = "Mount Doom";
+ 
+    document.getElementById('mordor').appendChild(newDiv);
+
+
+
   // 2. add a div with an id of 'mount-doom' to Mordor
 
 };
