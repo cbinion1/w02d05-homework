@@ -143,10 +143,13 @@ const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
   let emptyDiv = document.createElement('div');
+   
     emptyDiv.setAttribute('id', 'the-ring');
+   
     emptyDiv.innerHTML = "The ring";
 
     let frodoRing = document.getElementsByClassName('hobbit')[0];
+   
     frodoRing.appendChild(emptyDiv);
 
   // 2. add the ring as a child of Frodo
@@ -166,6 +169,31 @@ const keepItSecretKeepItSafe = () => {
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
+let allTheBaddies = document.createElement('section');
+   
+    allTheBaddies.setAttribute('id', 'mordor');
+
+    let mordorRef = document.getElementById('mordor');
+   
+    mordorRef.appendChild(allTheBaddies);
+
+    for (let i = 0; i < baddies.length; i++) {
+   
+        let badGuy = document.createElement('article');
+   
+        badGuy.setAttribute('class', 'baddy');
+   
+        badGuy.setAttribute('id', baddies[i]);
+   
+        allTheBaddies.appendChild(badGuy);
+
+        let thisBaddy = document.createElement('h1');
+   
+        thisBaddy.innerHTML = baddies[i];
+   
+        badGuy.appendChild(thisBaddy);
+    }
+
 
   // 2. give each of the baddies a class of "baddy"
 
