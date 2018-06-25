@@ -383,6 +383,20 @@ const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
 
+alert("The horn of gondor has been blown!");
+
+    alert("Oh no! Boromir has been killed by Uruk-hai!");
+
+    let passedAway = document.getElementById('Boromir');
+
+    passedAway = passedAway.style.textDecoration = "line-through";
+
+    let allEnemies = document.querySelector('#mordor section');
+
+    let thisEnemy = document.getElementById('The Uruk-hai');
+
+    allEnemies.removeChild(thisEnemy);
+}
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
 
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
