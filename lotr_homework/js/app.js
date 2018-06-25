@@ -44,24 +44,36 @@ const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
-  console.log("Trying to make middle earth.");
+  console.log("makeMiddleEarth");
 
   // 1. create a section tag with an id of middle-earth
-  $("body").append("<section id=middle-earth></section>");
+  
   // 2. append the section to the body of the DOM.
 
   // 3. use a for loop to iterate over the lands array that does the following:
-for (i = 0; i <= lands.length; i++){
-  const $article = $('article');
-   $article.attr('id', lands[i]);
-   const $landHeader = $('<h1/>');
-   $landHeader.text(lands[i]);
-   $article.append($landHeader);
-   $middleEarth.append($article);
- }
+// $("body").append("<section id=middleEarth></section>");{
 
+ let middleEarth = document.createElement('section');
+  
+  middleEarth.setAttribute('id', 'middle-earth');
+  
+  document.body.appendChild(middleEarth);
 
+    for (let i = 0; i < lands.length; i++) {
+       
+        let place = document.createElement('article');
+       
+        place.setAttribute('id', lands[i]);
+       
+        middleEarth.appendChild(place);
 
+        let nameOfLand = document.createElement('h1');
+       
+        nameOfLand.innerHTML = lands[i];
+       
+        place.appendChild(nameOfLand);
+    }
+};
   //   3a. creates an article tag (there should be one for each land when the loop is done)
 
   //   3b. gives each land article an `id` tag of the corresponding land name
@@ -70,7 +82,6 @@ for (i = 0; i <= lands.length; i++){
 
   //   3d. appends each land to the middle-earth section
 
-};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 1 complete - Made Middle Earth".
@@ -83,6 +94,36 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
+
+let allTheHobbits = document.createElement('section');
+    
+    allTheHobbits.setAttribute('id', 'the-shire');
+
+    let shireRef = document.getElementById('the-shire');
+    
+    shireRef.appendChild(allTheHobbits);
+
+    hobbits.sort();
+
+    for (let i = 0; i < hobbits.length; i++) {
+    
+        let hobbit = document.createElement('article');
+    
+        hobbit.setAttribute('class', 'hobbit');
+    
+        hobbit.setAttribute('id', hobbits[i]);
+    
+        allTheHobbits.appendChild(hobbit);
+
+        let thisHobbit = document.createElement('h1');
+    
+        thisHobbit.innerHTML = hobbits[i];
+    
+        hobbit.appendChild(thisHobbit);
+}
+
+
+
 
   // 2. give each hobbit a class of "hobbit"
 
